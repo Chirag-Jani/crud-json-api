@@ -1,0 +1,45 @@
+<div class="container-fluid mt-5">
+  <h2>Restaurant List</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of collection">
+      <tr>
+        <th>
+          {{ item.id }}
+        </th>
+        <th>
+          {{ item.name }}
+        </th>
+        <th>
+          {{ item.email }}
+        </th>
+        <th>
+          {{ item.address }}
+        </th>
+        <th>
+          <i
+            (click)="deleteResto(item.id)"
+            class="fa fa-trash"
+            style="font-size: 20px; color: red"
+          ></i>
+          <i>
+            <a routerLink="/update/{{ item.id }}">
+              <i
+                class="fa fa-edit"
+                style="font-size: 20px; color: green; margin-left: 30px"
+              ></i>
+            </a>
+          </i>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
