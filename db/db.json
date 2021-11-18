@@ -1,0 +1,34 @@
+{
+  "restaurants": [
+    {
+      "name": "resto one",
+      "email": "one@resto.com",
+      "address": "address one",
+      "id": 1
+    },
+    {
+      "name": "resto two",
+      "email": "two@resto.com",
+      "address": "address two",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "resto three",
+      "email": "three@resto.com",
+      "address": "address three"
+    },
+    {
+      "name": "resto four",
+      "email": "four@resto.com",
+      "address": "address four",
+      "id": 4
+    },
+    {
+      "name": "resto five",
+      "email": "five@resto.com",
+      "address": "address five",
+      "id": 5
+    }
+  ]
+}
