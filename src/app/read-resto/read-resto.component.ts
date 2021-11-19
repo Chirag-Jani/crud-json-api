@@ -1,6 +1,6 @@
+import { MatTableDataSource } from '@angular/material/table';
 import { RestoService } from './../resto.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-read-resto',
   templateUrl: './read-resto.component.html',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadRestoComponent implements OnInit {
   collection: any = {};
+  dataSource = new MatTableDataSource(this.collection);
 
   constructor(private restoService: RestoService) {}
 
@@ -22,5 +23,11 @@ export class ReadRestoComponent implements OnInit {
     this.restoService.deleteResto(id).subscribe((result) => {
       console.log('result', result);
     });
+  }
+
+  filterText(data: string) {
+    this.dataSource.filter = data.trim().toLowerCase();
+    // console.log(data.toLowerCase());
+    //
   }
 }

@@ -1,5 +1,15 @@
 <div class="container-fluid mt-5">
   <h2>Restaurant List</h2>
+  <mat-form-field>
+    <input
+      matInput
+      #input
+      (keyup)="filterText(input.value)"
+      type="text"
+      placeholder="Filter"
+    />
+  </mat-form-field>
+
   <table class="table">
     <thead>
       <tr>

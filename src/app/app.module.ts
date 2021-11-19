@@ -8,6 +8,8 @@ import { ReadRestoComponent } from './read-resto/read-resto.component';
 import { UpdateRestoComponent } from './update-resto/update-resto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
   ],
+  exports: [MatInputModule],
+
   providers: [],
   bootstrap: [AppComponent],
 })
