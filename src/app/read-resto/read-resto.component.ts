@@ -1,3 +1,5 @@
+import { ModelComponent } from './../model/model.component';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { RestoService } from './../resto.service';
 import { Component, OnInit } from '@angular/core';
@@ -8,13 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadRestoComponent implements OnInit {
   collection: any = {};
-  dataSource = new MatTableDataSource(this.collection);
+  datasource: any;
 
-  constructor(private restoService: RestoService) {}
+  constructor(
+    private restoService: RestoService,
+    private dialogRef: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.restoService.getData().subscribe((result) => {
       this.collection = result;
+      this.datasource = new MatTableDataSource(this.collection);
+      //
     });
   }
 
@@ -26,8 +33,11 @@ export class ReadRestoComponent implements OnInit {
   }
 
   filterText(data: string) {
-    this.dataSource.filter = data.trim().toLowerCase();
-    // console.log(data.toLowerCase());
-    //
+    this.datasource.filter = data.trim().toLowerCase();
+  }
+  openModel(data: any, fieldName: any) {
+    this.restoService.defaultData = data;
+    this.restoService.defaultFieldName = fieldName;
+    this.dialogRef.open(ModelComponent);
   }
 }

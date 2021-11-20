@@ -27,12 +27,27 @@
         </th>
         <th>
           {{ item.name }}
+          <button (click)="openModel(item.name, 'Name')">
+            <a>
+              <i class="fa fa-edit" style="font-size: 20px; color: green"></i>
+            </a>
+          </button>
         </th>
         <th>
           {{ item.email }}
+          <button (click)="openModel(item.email, 'Email')">
+            <a>
+              <i class="fa fa-edit" style="font-size: 20px; color: green"></i>
+            </a>
+          </button>
         </th>
         <th>
           {{ item.address }}
+          <button (click)="openModel(item.address, 'Address')">
+            <a>
+              <i class="fa fa-edit" style="font-size: 20px; color: green"></i>
+            </a>
+          </button>
         </th>
         <th>
           <i

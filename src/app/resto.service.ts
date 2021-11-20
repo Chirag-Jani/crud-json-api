@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RestoService {
   url = 'http://localhost:3000/restaurants';
+  defaultData = 'Dummy';
+  defaultFieldName = 'Field';
 
   constructor(private http: HttpClient) {}
 
@@ -23,5 +25,10 @@ export class RestoService {
   }
   updateResto(id: any, data: any) {
     return this.http.put(`${this.url}/${id}`, data);
+  }
+  //
+  getModalData(data: any, fieldName: any) {
+    this.defaultData = data;
+    this.defaultFieldName = fieldName;
   }
 }

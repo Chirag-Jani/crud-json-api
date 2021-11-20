@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModelComponent } from './model/model.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
     CreateRestoComponent,
     ReadRestoComponent,
     UpdateRestoComponent,
+    ModelComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatDialogModule,
   ],
   exports: [MatInputModule],
 
